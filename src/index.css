@@ -1,3 +1,13 @@
+@font-face {
+  font-family: 'Orbitron';
+  src: url('./fonts/Orbitron/Orbitron-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Pokemon';
+  src: url('./fonts/Pokemon-Classic.ttf');
+}
+
 body {
   margin: 0;
 }

@@ -26,7 +26,12 @@ li {
 #title {
   display: flex;
   justify-content: center;
+  align-items: end;
+  margin-bottom: 0;
   color: #1f9aff;
+  font-size: 20pt;
+  text-shadow : 0 0 20px #1f9aff;
+  font-family: 'Orbitron', sans-serif;
 }
 
 body {

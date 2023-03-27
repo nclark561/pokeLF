@@ -1,5 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import './fonts/Mynerve/Mynerve-Regular.ttf'
+import './fonts/Orbitron/Orbitron-VariableFont_wght.ttf'
+import './fonts/Pokemon-Classic.ttf'
 import './index.css';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom'
