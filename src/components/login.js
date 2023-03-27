@@ -9,7 +9,12 @@ const Login = () => {
         <div>
             <Link to="/user/zoroark">zoroark</Link>
             <div id='formdiv'> 
-                <form>
+                <form onSubmit={(event) => {
+                    event.preventDefault()
+                    let username = document.querySelector("#username").value
+                    let password = document.querySelector('#password').value
+                    console.log(username, password)
+                }}>
                     <PokeSprite image="mew"/>
                     <div className="box">Huehuehue<i></i></div>
                     <div>
@@ -27,5 +32,7 @@ const Login = () => {
         </div>
     )
 }
+
+
 
 export default Login

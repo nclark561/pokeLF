@@ -5,7 +5,30 @@
 
 header {
   display: flex;
+  flex-direction: column;
+  justify-content: end;
   height: 150px;
   width: 100%;
   border:solid;
+  background-color: #1d1d1d;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+}
+
+li {
+  margin-right: 20px;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  color: #1f9aff;
+}
+
+body {
+  background-color: #404040;
 }

@@ -4,9 +4,6 @@ form {
     align-items: center;
     justify-content: center;
     width: 33%;
-}
-
-form {
     background-color: #1d1d1d;
     padding: 40px;
     border-radius: 10px;
@@ -16,8 +13,6 @@ form {
     font-size: 20px;
     color: #fff;
 }
-
-
 
 input,
 input[type="password"] {
@@ -75,7 +70,7 @@ button:hover {
     font-family: "Pokemon GB", Arial, sans-serif;
     border-radius: 2px;
     padding: 8px;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
     width: 250px;
     height: 28px;
     line-height: 16px;
