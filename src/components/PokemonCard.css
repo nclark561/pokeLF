@@ -1,0 +1,40 @@
+.image-div {
+    border: solid;
+    border-color: azure;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
+    margin: 10px;
+    background-color: #d1d1d1;
+}
+
+.card-div {
+    display:flex;
+    border: solid;
+    border-color: azure;
+    width: 400px;
+    height: 250px;
+    border-radius: 30px;
+    background-color: #1d1d1d;
+    margin: 10px;
+    color: azure;
+    font-family: 'Orbitron', sans-serif;
+}
+
+.card-h2 {
+    margin-left: 20px;
+}
+
+.card-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-list > li {
+    margin-bottom: 25px;
+}
+
+.type-image {
+    height: 20px;
+    margin: 10px;
+}

@@ -1,0 +1,11 @@
+#home-title {
+    color: #1f9aff;
+    font-size: 18pt;
+    text-shadow : 0 0 20px #1f9aff;
+    font-family: 'Orbitron', sans-serif;
+}
+
+#home-div {
+    display: flex;
+    justify-content: center;
+}

@@ -2,17 +2,20 @@ import { Link, Route, Routes } from 'react-router-dom'
 import './App.css';
 
 import Login from './components/Login.js';
-import PokeSprite from './components/Pokemon.js';
+import PokeSprite from './components/PokeSprite.js';
 import NotFound from './components/NotFound.js';
 import SignUp from './components/SignUp';
 import Home from './components/Home.js'
+import PokemonCard from './components/PokemonCard';
 
 function App() {
   return (
     <>
       <header>
         <div id="title">
-          {/* <PokeSprite image="mew"/> */}
+          <div>
+            <PokeSprite image="mew" class="title-img"/>
+          </div>
           <h1>PokeLF</h1>
         </div>
         <nav>
@@ -26,7 +29,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/user">
           <Route index element={<Login />}/>
-          <Route path=":id" element={<PokeSprite image="zoroark"/>}/>
+          <Route path=":id" element={<PokemonCard image="zoroark"/>}/>
           <Route path="signup" element={<SignUp />}/>
         </Route>
         <Route path="*" element={<NotFound/>}></Route>

@@ -9,7 +9,7 @@ const PokeSprite = (props) => {
     })
     .catch(err => console.log(err))
     return (
-        <img src={image} alt="pokemon sprite"/>
+        <img src={image} alt="pokemon sprite" id={`${image}-image`}/>
     )
 }
 
