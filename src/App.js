@@ -1,15 +1,29 @@
+import { Link, Route, Routes } from 'react-router-dom'
 import './App.css';
-import LoginForm from './components/login.js';
+import Login from './components/Login.js';
+import PokeSprite from './components/Pokemon.js';
+import NotFound from './components/NotFound.js';
+import SignUp from './components/SignUp';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-
-
-      </header>
-      <LoginForm/>
-    </div>
+    <>
+      <nav>
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/user">Login</Link></li>
+        </ul>
+      </nav>
+      <Routes>
+        <Route path="/"/>
+        <Route path="/user">
+          <Route index element={<Login />}/>
+          <Route path=":id" element={<PokeSprite image="zoroark"/>}/>
+          <Route path="signup" element={<SignUp />}/>
+        </Route>
+        <Route path="*" element={<NotFound/>}></Route>
+      </Routes>
+    </>
   );
 }
 

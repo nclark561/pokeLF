@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom'
-import { useState } from 'react'
 import PokeSprite from './Pokemon'
-import './Login.css'
-import axios from 'axios'
 
-const Login = () => {
+const SignUp = () => {
     return (
         <div>
             <Link to="/user/zoroark">zoroark</Link>
@@ -20,12 +17,12 @@ const Login = () => {
                         <label htmlFor="password">Password:</label>
                         <input type="password" id="password" placeholder="password"></input>
                     </div>
-                    <button type="submit">Log In</button>
-                    <Link to="/user/signup">Don't have an account? Sign up here</Link>
+                    <button type="submit">Create Account</button>
+                    <a href="https://google.com">Don't have an account? Sign up here</a>
                 </form>
             </div>
         </div>
     )
 }
 
-export default Login
+export default SignUp
