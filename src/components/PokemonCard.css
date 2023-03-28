@@ -12,7 +12,7 @@
     display:flex;
     border: solid;
     border-color: azure;
-    width: 400px;
+    width: 420px;
     height: 250px;
     border-radius: 30px;
     background-color: #1d1d1d;
@@ -32,9 +32,14 @@
 
 .card-list > li {
     margin-bottom: 25px;
+    margin-left: 10px;
+}
+
+.type-div {
+    margin: 20px;
 }
 
 .type-image {
     height: 20px;
-    margin: 10px;
+    padding: 5px;
 }

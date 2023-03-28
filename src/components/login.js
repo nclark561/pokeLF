@@ -4,9 +4,11 @@ import './Login.css'
 import axios from 'axios'
 
 const Login = () => {
+    const pokemon = 'infernape'
+
     return (
         <div>
-            <Link to="/user/zoroark">zoroark</Link>
+            <Link to={`/user/${pokemon}`}>{pokemon}</Link>
             <div id='formdiv'> 
                 <form onSubmit={(event) => {
                     event.preventDefault()
