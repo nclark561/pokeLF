@@ -6,6 +6,7 @@ const PokemonCard = (props) => {
     const pokedexNum = 571;
     const nickname = '';
     const type1 = 'dark';
+    const type2 = null;
     const isShiny = true;
     
     return (
@@ -16,6 +17,7 @@ const PokemonCard = (props) => {
                 </div>
                 <div className="type-div">
                     <img src={`https://www.serebii.net/pokedex-bw/type/${type1}.gif`} alt='type image' className="type-image"/>
+                    {type2 ? <img src={`https://www.serebii.net/pokedex-bw/type/${type2}.gif`} alt='type image' className="type-image"/> : null}
                 </div>
             </div>
             <div>

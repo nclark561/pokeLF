@@ -14,7 +14,7 @@ const Login = () => {
                     let password = document.querySelector('#password').value
                     console.log(username, password)
                 }}>
-                    <img id="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
+                    <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
                     <div className="box">Welcome! What is your name?<i></i></div>
                     <div>
                         <label htmlFor="username">Username:</label>

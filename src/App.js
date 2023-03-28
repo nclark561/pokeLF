@@ -14,7 +14,7 @@ function App() {
       <header>
         <div id="title">
           <div>
-            <PokeSprite image="mew" class="title-img"/>
+            <PokeSprite image="mew" className="title-img"/>
           </div>
           <h1>PokeLF</h1>
         </div>
