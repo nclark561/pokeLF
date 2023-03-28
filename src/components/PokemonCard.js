@@ -8,7 +8,7 @@ const PokemonCard = (props) => {
     const nickname = 'Buu';
     const type1 = 'psychic';
     const type2 = null;
-    const isShiny = true;
+    const isShiny = false;
     const gender = null;
     const forTrade = false;
     

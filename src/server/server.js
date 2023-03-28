@@ -1,14 +1,22 @@
 const express = require('express')
+const path = require('path')
 
 const app = express()
 
 app.use(express.json())
 require('dotenv').config()
 
-const {SERVER_PORT} = process.env
-const {} = require('./controller.js')
+const { createAccount } = require('./controller.js')
+
+app.use(express.static(path.resolve(__dirname, '../../build')))
+
+app.post('/signup', createAccount)
 
 
 
+app.get('/*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../../build', 'index.html'))
+})
 
-app.listen(SERVER_PORT, () => console.log(`app up on ${SERVER_PORT}`))
+const {PORT} = process.env
+app.listen(PORT, () => console.log(`app up on ${PORT}`))
