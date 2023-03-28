@@ -18,7 +18,7 @@ function App() {
     })
     .catch(err => console.log(err))
 
-  const pokemon = 'infernape'
+  const pokemon = 'mewtwo-mega-y'
 
   return (
     <>

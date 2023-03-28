@@ -4,7 +4,7 @@ import './Login.css'
 import axios from 'axios'
 
 const Login = () => {
-    const pokemon = 'infernape'
+    const pokemon = 'mewtwo'
 
     return (
         <div>
