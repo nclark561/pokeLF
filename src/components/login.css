@@ -12,6 +12,7 @@ form {
     width: 100%;
     font-size: 20px;
     color: #fff;
+    box-shadow: 0 0 10px #1f9aff;
 }
 
 label {

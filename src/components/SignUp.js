@@ -19,7 +19,7 @@ const SignUp = () => {
                     console.log(maBod)
 
                     axios.post('/signup', maBod)
-                    .then()
+                    .then(res => console.log(res, `${maBod.username} account successfully created`))
                     .catch(err => console.log(err))
                 }}>
                     <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>

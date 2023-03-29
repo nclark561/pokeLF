@@ -13,6 +13,13 @@ const sequelize = new Sequelize(CONNECTION_STRING, {
 
 module.exports = {
     createAccount: async (req, res) => {
-        console.log(req.body)
+        let maBod = req.body
+
+        sequelize.query(`
+        INSERT INTO users (username, password)
+        VALUES ('${maBod.username}', '${maBod.password}');
+        `)
+        .then(dbRes => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 }
