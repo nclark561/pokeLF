@@ -2,19 +2,22 @@ import PokemonCard from "./PokemonCard.js"
 import "./UserPokemon.css"
 
 const UserPokemon = () => {
-    const pokemon = 'mewtwo-mega-y'
+    const pokemon = ['mewtwo-mega-y', 'zoroark']
+    const wishlist = ['scrafty', 'floette', 'shaymin-land']
 
     return (
         <div id="user-pokemon">
             <h1 className="title">Your Pokemon</h1>
             <div className="card-container">
-                <PokemonCard image={pokemon} wish={false}/>
-                <PokemonCard image="zoroark" wish={false}/>               
+                {                
+                    pokemon.map(e => (<PokemonCard image={e}/>))
+                }              
             </div>
             <h1 className="title">Looking For</h1>
             <div className="card-container">
-                <PokemonCard image="zoroark" wish={true}/>
-                <PokemonCard image="floette" wish={true}/>
+                {
+                    wishlist.map(e => (<PokemonCard image={e} wish={true}/>))
+                }
             </div>
         </div>
     )
