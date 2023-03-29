@@ -8,7 +8,8 @@ import PokeSprite from './components/PokeSprite.js';
 import NotFound from './components/NotFound.js';
 import SignUp from './components/SignUp';
 import Home from './components/Home.js'
-import PokemonCard from './components/PokemonCard';
+import PokemonCard from './components/PokemonCard.js';
+import UserPokemon from './components/UserPokemon.js'
 
 function App() {
   const [image, setImage] = useState()
@@ -18,7 +19,6 @@ function App() {
     })
     .catch(err => console.log(err))
 
-  const pokemon = 'mewtwo-mega-y'
 
   return (
     <>
@@ -40,7 +40,7 @@ function App() {
         <Route path="/" element={<Home/>}/>
         <Route path="/user">
           <Route index element={<Login />}/>
-          <Route path=":id" element={<PokemonCard image={pokemon}/>}/>
+          <Route path=":id" element={<UserPokemon/>}/>
           <Route path="signup" element={<SignUp />}/>
         </Route>
         <Route path="*" element={<NotFound/>}></Route>

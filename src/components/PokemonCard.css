@@ -16,9 +16,10 @@
     height: 250px;
     border-radius: 30px;
     background-color: #1d1d1d;
-    margin: 10px;
+    margin: 20px 10px 10px 10px;
     color: azure;
     font-family: 'Orbitron', sans-serif;
+    min-width: 420px;
 }
 
 .card-h {

@@ -11,6 +11,7 @@ const PokemonCard = (props) => {
     const isShiny = false;
     const gender = null;
     const forTrade = false;
+    const isWish = props.wish;
     
     return (
         <div className="card-div">
@@ -29,7 +30,7 @@ const PokemonCard = (props) => {
                     <li>Nickname: {nickname ? nickname : null}</li>
                     <li>Gender: {gender ? gender : null}</li>
                     <li>Shiny: {isShiny ? 'yes' : 'no'}</li>
-                    <li>For Trade: {forTrade ? 'yes' : 'no'}</li>
+                    {!isWish ? <li>For Trade: {forTrade ? 'yes' : 'no'}</li> : null}
                 </ul>
             </div>
         </div>
