@@ -14,7 +14,7 @@ const UserPokemon = () => {
             <h1 className="title">Looking For</h1>
             <div className="card-container">
                 <PokemonCard image="zoroark" wish={true}/>
-                <PokemonCard image="zoroark" wish={true}/>
+                <PokemonCard image="floette" wish={true}/>
             </div>
         </div>
     )
