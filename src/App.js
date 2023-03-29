@@ -2,6 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import './App.css';
+import { signOut } from 'firebase/auth';
 
 import Login from './components/Login.js';
 import PokeSprite from './components/PokeSprite.js';

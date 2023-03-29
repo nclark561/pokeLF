@@ -1,6 +1,6 @@
 CREATE TABLE users (
     id SERIAL PRIMARY KEY,
-    username VARCHAR UNIQUE,
+    email VARCHAR UNIQUE,
     password VARCHAR NOT NULL
 );
 
@@ -26,9 +26,9 @@ CREATE TABLE wishlist (
     is_shiny BOOLEAN NOT NULL
 );
 
-INSERT INTO users (username, password)
-VALUES ('pig', 'password'),
-('noah', 'password2');
+INSERT INTO users (email, password)
+VALUES ('noahwebdev@gmail.com', 'password'),
+('legacygardening@gmail.com', 'password2');
 
 INSERT INTO pokemon (pokedex_num, trainer_id, nickname, type1, type2, gender, is_shiny, for_trade)
 VALUES (392, 1, null, 'fire', 'fighting', 'male', FALSE, TRUE),

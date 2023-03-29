@@ -16,8 +16,8 @@ module.exports = {
         let maBod = req.body
 
         sequelize.query(`
-        INSERT INTO users (username, password)
-        VALUES ('${maBod.username}', '${maBod.password}');
+        INSERT INTO users (email, password)
+        VALUES ('${maBod.email}', '${maBod.password}');
         `)
         .then(dbRes => res.sendStatus(200))
         .catch(err => console.log(err))

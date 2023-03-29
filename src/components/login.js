@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import './Login.css'
 import axios from 'axios'
+import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
     const pokemon = 'mewtwo'

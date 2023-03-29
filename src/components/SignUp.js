@@ -1,13 +1,20 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import axios from 'axios'
+import {auth} from '../firebase-config'
+import { createUserWithEmailAndPassword } from 'firebase/auth'
 
 const SignUp = () => {
     const [registerEmail, setRegisterEmail] = useState()
-    const [registerPassword, setRegisterPassword] = useState
+    const [registerPassword, setRegisterPassword] = useState()
 
     const register = async () => {
-
+        try {
+        const user = createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+        console.log(user)
+        } catch (err) {
+            console.log(err)
+        }
     }
 
     return (
@@ -17,6 +24,8 @@ const SignUp = () => {
                 <form onSubmit={event => {
                     event.preventDefault()
 
+                    register()
+
                     let maBod = {
                         email: registerEmail,
                         password: registerPassword
@@ -25,7 +34,7 @@ const SignUp = () => {
                     console.log(maBod)
 
                     axios.post('/signup', maBod)
-                    .then(res => console.log(res, `${maBod.username} account successfully created`))
+                    .then(res => console.log(res, `${maBod} account successfully created`))
                     .catch(err => console.log(err))
                 }}>
                     <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
