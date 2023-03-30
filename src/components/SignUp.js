@@ -10,10 +10,10 @@ const SignUp = () => {
 
     const register = async () => {
         try {
-        const user = createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+        const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
         console.log(user)
         } catch (err) {
-            console.log(err)
+            console.log(err.message)
         }
     }
 

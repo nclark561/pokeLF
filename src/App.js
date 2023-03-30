@@ -2,7 +2,8 @@ import { Link, Route, Routes } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import './App.css';
-import { signOut } from 'firebase/auth';
+import { auth } from './firebase-config';
+import { signOut, onAuthStateChanged } from 'firebase/auth';
 
 import Login from './components/Login.js';
 import PokeSprite from './components/PokeSprite.js';
@@ -21,8 +22,16 @@ function App() {
     .catch(err => console.log(err))
 
     const logout = async () => {
-  
+      await signOut(auth)
     }
+
+    const [user, setUser] = useState()
+    
+    onAuthStateChanged(auth, (currentUser) => {
+      setUser(currentUser)
+    })
+
+    
 
   return (
     <>
@@ -39,9 +48,10 @@ function App() {
             <li><Link to="/user">Login</Link></li>
           </ul>
         </nav>
+        {user ? <button onClick={ logout }>Log Out</button> : null}
       </header>
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home user={null}/>}/>
         <Route path="/user">
           <Route index element={<Login />}/>
           <Route path=":id" element={<UserPokemon/>}/>

@@ -2,27 +2,36 @@ import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import './Login.css'
 import axios from 'axios'
+import {auth} from '../firebase-config'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
-    const pokemon = 'mewtwo'
+    
 
     const [loginEmail, setLoginEmail] = useState()
     const [loginPassword, setLoginPassword] = useState()
 
     const login = async () => {
-  
+        try {
+            const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            console.log(user)
+        } catch (err) {
+            console.log(err.message)
+        }
+        
     }
+
+    
 
     return (
         <div>
-            <Link to={`/user/${pokemon}`}>{pokemon}</Link>
+            
             <div id='formdiv'> 
                 <form onSubmit={(event) => {
                     event.preventDefault()
-                    let username = document.querySelector("#username").value
-                    let password = document.querySelector('#password').value
-                    console.log(username, password)
+
+                    login()
+
                 }}>
                     <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
                     <div className="box">Welcome! What is your name?<i></i></div>
