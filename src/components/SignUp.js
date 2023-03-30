@@ -35,7 +35,10 @@ const SignUp = () => {
 
                     axios.post('/signup', maBod)
                     .then(res => console.log(res, `${maBod} account successfully created`))
-                    .catch(err => console.log(err))
+                    .catch(err => {
+                        alert('invalid email or password')
+                        console.log(err)
+                    })
                 }}>
                     <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
                     <div className="box">I don't believe I've seen you around here. Who might you be?<i></i></div>

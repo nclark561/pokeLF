@@ -20,6 +20,9 @@ module.exports = {
         VALUES ('${maBod.email}', '${maBod.password}');
         `)
         .then(dbRes => res.sendStatus(200))
-        .catch(err => console.log(err))
+        .catch(err => {
+            res.sendStatus(400)
+            console.log(err)
+        })
     }
 }

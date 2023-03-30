@@ -39,3 +39,15 @@ INSERT INTO wishlist (pokedex_num, user_id, type1, type2, gender, is_shiny)
 VALUES (490, 1, 'water', null, null, FALSE),
 (560, 1, 'dark', 'fighting', null, TRUE),
 (670, 2, 'fairy', null, 'female', TRUE);
+
+
+
+
+
+
+
+DROP TABLE pokemon;
+
+DROP TABLE wishlist;
+
+DROP TABLE users;
