@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react'
+import axios from 'axios'
 import PokemonCard from "./PokemonCard.js"
 import "./UserPokemon.css"
 
@@ -6,14 +7,6 @@ import "./UserPokemon.css"
 const UserPokemon = () => {
     const pokemon = ['mewtwo-mega-y', 'zoroark']
     const wishlist = ['scrafty', 'floette', 'shaymin-land']
-    const [userId, setUserId] = useState()
-
-    useEffect(() => {
-        axios.get(`/user-id/${localStorage.getItem("email")}`)
-        .then((res) => {
-            setUserId(res.data)
-        })
-    }, [])
 
     return (
         <div id="user-pokemon">
