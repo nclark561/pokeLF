@@ -24,5 +24,17 @@ module.exports = {
             res.sendStatus(400)
             console.log(err)
         })
+    },
+
+    getId: (req, res) => {
+        let email = req.params.email
+
+        sequelize.query(`
+        SELECT *
+        FROM users
+        WHERE email = '${email}';
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => console.log(err))
     }
 }

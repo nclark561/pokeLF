@@ -6,13 +6,13 @@ const app = express()
 app.use(express.json())
 require('dotenv').config()
 
-const { createAccount } = require('./controller.js')
+const { createAccount, getId } = require('./controller.js')
 
 app.use(express.static(path.resolve(__dirname, '../../build')))
 
 app.post('/signup', createAccount)
 
-
+app.get('/user-id/:email', getId)
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../build', 'index.html'))

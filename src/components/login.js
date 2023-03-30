@@ -11,14 +11,12 @@ const Login = () => {
     const [loginEmail, setLoginEmail] = useState()
     const [loginPassword, setLoginPassword] = useState()
 
-    const login = async () => {
-        try {
-            const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-            console.log(user)
-        } catch (err) {
-            console.log(err.message)
-        }
-        
+    const login = () => {
+            signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            .then(() => {
+                localStorage.setItem("email", `${loginEmail}`)
+            })
+            .catch(err => console.log(err.message))
     }
 
     

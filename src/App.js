@@ -23,6 +23,7 @@ function App() {
 
     const logout = async () => {
       await signOut(auth)
+      localStorage.removeItem("email")
     }
 
     const [user, setUser] = useState()
@@ -51,7 +52,7 @@ function App() {
         {user ? <button onClick={ logout }>Log Out</button> : null}
       </header>
       <Routes>
-        <Route path="/" element={<Home user={null}/>}/>
+        <Route path="/" element={<Home user={user}/>}/>
         <Route path="/user">
           <Route index element={<Login />}/>
           <Route path=":id" element={<UserPokemon/>}/>
