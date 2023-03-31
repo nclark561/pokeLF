@@ -7,39 +7,34 @@ import { signInWithEmailAndPassword } from 'firebase/auth'
 
 const Login = () => {
     const navigate = useNavigate()
-    
 
     const [loginEmail, setLoginEmail] = useState()
     const [loginPassword, setLoginPassword] = useState()
-    const [userId, setUserId] = useState()
-    const [email, setEmail] = useState()
 
-    const login = () => {
-            signInWithEmailAndPassword(auth, loginEmail, loginPassword)
-            .then(() => {
-                localStorage.setItem("email", `${loginEmail}`)
-                setEmail(localStorage.getItem('email'))
-            })
-            .catch(err => console.log(err.message))
+    const signIn = async () => {
+        try {
+            await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
+            localStorage.setItem("email", `${loginEmail}`)
+            let email = localStorage.getItem("email")
+            
+
+            console.log(email)
+
+            const { data } = await axios.get(`/user-id/${email}`)
+
+            localStorage.setItem("userId", `${data[0].id}`)
+            
+            navigate(`/user/${data[0].id}`)
+        } catch (err) {
+            console.log(err.message)
+        }
     }
 
     const handleSubmit = (event) => {
         event.preventDefault()
 
-        login()
-
-        console.log(userId[0].id)
-
-        navigate(`/user/${userId[0].id}`)
+        signIn() 
     }
-
-    useEffect(() => {
-        axios.get(`/user-id/${localStorage.getItem("email")}`)
-        .then((res) => {
-            setUserId(res.data)
-        })
-    }, [email])
-
     
 
     return (

@@ -1,4 +1,4 @@
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link, Route, Routes, useNavigate } from 'react-router-dom'
 import axios from 'axios'
 import { useState } from 'react'
 import './App.css';
@@ -14,25 +14,27 @@ import PokemonCard from './components/PokemonCard.js';
 import UserPokemon from './components/UserPokemon.js'
 
 function App() {
+
   const [image, setImage] = useState()
-    axios.get(`https://pokeapi.co/api/v2/pokemon/mew`)
-    .then(res => {
-        setImage(res.data.sprites.front_shiny)
-    })
-    .catch(err => console.log(err))
+  const [userId, setUserId] = useState()
 
-    const logout = async () => {
-      await signOut(auth)
-      localStorage.removeItem("email")
-    }
+  axios.get(`https://pokeapi.co/api/v2/pokemon/mew`)
+  .then(res => {
+      setImage(res.data.sprites.front_shiny)
+  })
+  .catch(err => console.log(err))
 
-    const [user, setUser] = useState()
-    
-    onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser)
-    })
+  const logout = async () => {
+    await signOut(auth)
+    localStorage.removeItem("email")
+    localStorage.removeItem("userId")
+  }
 
-    
+  const [user, setUser] = useState()
+  
+  onAuthStateChanged(auth, (currentUser) => {
+    setUser(currentUser)
+  })
 
   return (
     <>
