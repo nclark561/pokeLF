@@ -11,9 +11,6 @@ const UserPokemon = () => {
 
     const routeParams = useParams()
 
-    console.log(routeParams.id)
-    console.log(localStorage.getItem("userId"))
-
     let pokemon1 = ['mewtwo-mega-y', 'zoroark']
     let wishlist1 = ['scrafty', 'floette', 'shaymin-land']
 

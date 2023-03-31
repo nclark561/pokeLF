@@ -16,9 +16,6 @@ const Login = () => {
             await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             localStorage.setItem("email", `${loginEmail}`)
             let email = localStorage.getItem("email")
-            
-
-            console.log(email)
 
             const { data } = await axios.get(`/user-id/${email}`)
 

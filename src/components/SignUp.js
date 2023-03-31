@@ -15,9 +15,6 @@ const SignUp = () => {
         await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
         localStorage.setItem("email", `${registerEmail}`)
             let email = localStorage.getItem("email")
-            
-
-            console.log(email)
 
             const { data } = await axios.get(`/user-id/${email}`)
 

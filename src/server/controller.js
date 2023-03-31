@@ -36,5 +36,19 @@ module.exports = {
         `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => console.log(err))
+    },
+
+    getPokemon: (req, res) => {
+        let id = req.params.id
+        
+        sequelize.query(`
+            SELECT * FROM pokemon
+            WHERE trainer_id = ${id};
+        `)
+        .then(dbRes => res.status(200).send(dbRes[0]))
+        .catch(err => {
+            console.log(err)
+            res.sendStatus(400)
+        })
     }
 }

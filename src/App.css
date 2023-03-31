@@ -53,3 +53,11 @@ li {
 body {
   background-color: #404040;
 }
+
+.not-found {
+  color: #1f9aff;
+    font-size: 35pt;
+    text-shadow : 0 0 20px #1f9aff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+}
