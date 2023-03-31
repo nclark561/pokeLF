@@ -27,6 +27,7 @@ const Login = () => {
             navigate(`/user/${data[0].id}`)
         } catch (err) {
             console.log(err.message)
+            alert('Invalid email or password')
         }
     }
 
