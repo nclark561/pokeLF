@@ -13,13 +13,13 @@ const UserPokemon = () => {
             <h1 className="title">Your Pokemon</h1>
             <div className="card-container">
                 {                
-                    pokemon.map(e => (<PokemonCard image={e}/>))
+                    pokemon.map(e => (<PokemonCard image={e} key={e}/>))
                 }              
             </div>
             <h1 className="title">Looking For</h1>
             <div className="card-container">
                 {
-                    wishlist.map(e => (<PokemonCard image={e} wish={true}/>))
+                    wishlist.map(e => (<PokemonCard image={e} wish={true} key={e}/>))
                 }
             </div>
         </div>

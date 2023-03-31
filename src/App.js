@@ -16,7 +16,6 @@ import UserPokemon from './components/UserPokemon.js'
 function App() {
 
   const [image, setImage] = useState()
-  const [userId, setUserId] = useState()
 
   axios.get(`https://pokeapi.co/api/v2/pokemon/mew`)
   .then(res => {
@@ -47,11 +46,17 @@ function App() {
         </div>
         <nav>
           <ul>
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/user">Login</Link></li>
+            {
+              !user ?
+              <>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/user">Login</Link></li>
+              </>
+              :
+              <li><Link to="/" onClick={logout}>Logout</Link></li>
+            }   
           </ul>
         </nav>
-        {user ? <button onClick={ logout }>Log Out</button> : null}
       </header>
       <Routes>
         <Route path="/" element={<Home user={user}/>}/>
