@@ -44,3 +44,22 @@
     height: 20px;
     padding: 5px;
 }
+
+.delete-btn {
+    max-width: 150px;
+    max-height: 50px;
+    padding: 2px;
+    margin:5px;
+}
+
+.other-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.edit-btn {
+    max-width: 150px;
+    max-height: 50px;
+    padding: 2px;
+    margin:5px;
+}
