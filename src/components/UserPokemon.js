@@ -27,6 +27,7 @@ const UserPokemon = () => {
                     {                
                         pokemon.map(e => (<PokemonCard image={e.poke_name}
                             key={e.pokemon_id}
+                            id={e.pokemon_id}
                             gender={e.gender}
                             pokedex={e.pokedex_num}
                             isShiny={e.is_shiny}
@@ -43,6 +44,7 @@ const UserPokemon = () => {
                         wishlist.map(e => (<PokemonCard image={e.wish_name}
                             wish={true} 
                             key={e.wish_id}
+                            id={e.wish_id}
                             gender={e.gender}
                             pokedex={e.pokedex_num}
                             isShiny={e.is_shiny}

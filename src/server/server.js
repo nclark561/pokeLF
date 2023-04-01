@@ -6,7 +6,7 @@ const app = express()
 app.use(express.json())
 require('dotenv').config()
 
-const { createAccount, getId, getPokemon } = require('./controller.js')
+const { createAccount, getId, getPokemon, deletePokemon, deleteWish } = require('./controller.js')
 
 app.use(express.static(path.resolve(__dirname, '../../build')))
 
@@ -15,6 +15,10 @@ app.post('/signup', createAccount)
 app.get('/user-id/:email', getId)
 
 app.get('/user-pokemon/:id', getPokemon)
+
+app.delete('/user-pokemon/:id', deletePokemon)
+
+app.delete('/user-wish/:id', deleteWish)
 
 app.get('/*', (req, res) => {
     res.sendFile(path.join(__dirname, '../../build', 'index.html'))

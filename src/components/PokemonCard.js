@@ -1,3 +1,4 @@
+import axios from 'axios'
 import PokeSprite from "./PokeSprite.js";
 import './PokemonCard.css'
 
@@ -5,9 +6,19 @@ const PokemonCard = (props) => {
     const firstName = props.image.split('-')[0] + (props.image.split('-')[1] === 'oh' ? '-' + props.image.split('-')[1] : '')
     const pokeName = firstName.charAt(0).toUpperCase() + firstName.replace(/^./, '')
     const isWish = props.wish;
+
+    const handleDelete = async () => {
+        if (props.wish) {
+            await axios.delete(`/user-wish/${props.id}`)
+            alert('pokemon successfully deleted')
+        } else {
+            await axios.delete(`/user-pokemon/${props.id}`)
+            alert('pokemon successfully deleted')
+        }
+    }
     
     return (
-        <div className="btn-div">
+        <div className="btn-div" id={props.id}>
             <div className="card-div">
                 <div>
                     <div className="image-div">
@@ -29,7 +40,7 @@ const PokemonCard = (props) => {
                 </div>
             </div>
             <div className="other-btn">
-            <button className="delete-btn">Delete Pokemon</button>
+            <button className="delete-btn" onClick={handleDelete}>Delete Pokemon</button>
             <button className="edit-btn">Edit Pokemon</button>
             </div>
         </div>

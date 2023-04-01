@@ -53,5 +53,29 @@ module.exports = {
             console.log(err)
             res.sendStatus(400)
         })
+    },
+
+    deletePokemon: (req, res) => {
+        let id = req.params.id
+
+        sequelize.query(`
+            DELETE
+            FROM pokemon
+            WHERE pokemon_id = ${id};
+        `)
+        .then(dbRes => res.sendStatus(200))
+        .catch(err => console.log(err))
+    },
+
+    deleteWish: (req, res) => {
+        let id = req.params.id
+
+        sequelize.query(`
+            DELETE
+            FROM wishlist
+            WHERE wish_id = ${id};
+        `)
+        .then(dbRes => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 }
