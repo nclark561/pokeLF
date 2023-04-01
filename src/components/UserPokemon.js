@@ -30,7 +30,16 @@ const UserPokemon = () => {
                 <h1 className="title">Your Pokemon</h1>
                 <div className="card-container">
                     {                
-                        pokemon1.map(e => (<PokemonCard image={e} key={e}/>))
+                        pokemon.map(e => (<PokemonCard image={e.poke_name}
+                            key={e.pokemon_id}
+                            gender={e.gender}
+                            pokedex={e.pokedex_num}
+                            is-shiny={e.is_shiny}
+                            for-trade={e.for_trade}
+                            type1={e.type1}
+                            type2={e.type2}
+                            nickname={e.nickname}
+                            />))
                     }              
                 </div>
                 <h1 className="title">Looking For</h1>
