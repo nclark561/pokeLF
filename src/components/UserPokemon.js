@@ -36,7 +36,8 @@ const UserPokemon = () => {
                             type2={e.type2}
                             nickname={e.nickname}
                             />))
-                    }              
+                    }
+                    <button className='add-btn'>Add Pokemon</button>              
                 </div>
                 <h1 className="title">Looking For</h1>
                 <div className="card-container">
@@ -52,6 +53,7 @@ const UserPokemon = () => {
                             type2={e.type2}
                             />))
                     }
+                    <button className='add-btn'>Add Pokemon</button>
                 </div>
             </div>
         )

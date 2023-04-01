@@ -1,6 +1,7 @@
 .card-container {
     display: flex;
     max-width: 100%;
+    align-items: center;
 }
 
 #user-pokemon {
@@ -22,4 +23,22 @@
     text-shadow : 0 0 20px #1f9aff;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
+}
+
+.add-btn {
+    height: 150px;
+    width: 150px;
+    margin: 20px;
+    border: solid;
+    border-color: azure;
+    border-radius: 20px;
+    background-color: #1d1d1d;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 16pt;
+    color: #b3b3b3;
+    box-shadow: none;
+}
+
+.add-btn:hover {
+    background-color: #16222a;
 }
