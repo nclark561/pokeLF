@@ -41,7 +41,6 @@ const PokemonCard = (props) => {
             </div>
             <div className="other-btn">
             <button className="delete-btn" onClick={handleDelete}>Delete Pokemon</button>
-            <button className="edit-btn">Edit Pokemon</button>
             </div>
         </div>
     )

@@ -50,6 +50,9 @@
     max-height: 50px;
     padding: 2px;
     margin:5px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14pt;
+    color:#1d1d1d;
 }
 
 .other-btn {
@@ -57,9 +60,3 @@
     justify-content: center;
 }
 
-.edit-btn {
-    max-width: 150px;
-    max-height: 50px;
-    padding: 2px;
-    margin:5px;
-}
