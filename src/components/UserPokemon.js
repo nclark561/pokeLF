@@ -6,7 +6,7 @@ import "./UserPokemon.css"
 
 
 const UserPokemon = () => {
-    const [pokemon, setPokemon] = useState()
+    const [pokemon, setPokemon] = useState([])
     const [wishlist, setWishlist] = useState()
 
     const routeParams = useParams()
@@ -15,10 +15,15 @@ const UserPokemon = () => {
     let wishlist1 = ['scrafty', 'floette', 'shaymin-land']
 
     const getPokemon = async () => {
-        await axios.get('/user-pokemon')
+        const {data} = await axios.get(`/user-pokemon/${localStorage.getItem("userId")}`)
+        if (pokemon !== data) setPokemon(() => data)
     }
 
-    
+    if (pokemon.length === 0) getPokemon()
+
+    console.log(pokemon)
+
+
     if (localStorage.getItem("userId") === routeParams.id) {
         return (
             <div id="user-pokemon">
