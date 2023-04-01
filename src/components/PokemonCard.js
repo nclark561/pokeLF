@@ -17,20 +17,20 @@ const PokemonCard = (props) => {
         <div className="card-div">
             <div>
                 <div className="image-div">
-                    <PokeSprite image={props.image} shiny={isShiny}/>
+                    <PokeSprite image={props.image} shiny={props.isShiny}/>
                 </div>
                 <div className="type-div">
-                    <img src={`https://www.serebii.net/pokedex-bw/type/${type1}.gif`} alt='type1' className="type-image"/>
-                    {type2 ? <img src={`https://www.serebii.net/pokedex-bw/type/${type2}.gif`} alt='type2' className="type-image"/> : null}
+                    <img src={`https://www.serebii.net/pokedex-bw/type/${props.type1}.gif`} alt='type1' className="type-image"/>
+                    {props.type2 ? <img src={`https://www.serebii.net/pokedex-bw/type/${props.type2}.gif`} alt='type2' className="type-image"/> : null}
                 </div>
             </div>
             <div>
-                <h3 className="card-h">#{pokedexNum} {pokeName}</h3>
+                <h3 className="card-h">#{props.pokedex} {pokeName}</h3>
                 <ul className="card-list">
-                    <li>Nickname: {nickname ? nickname : null}</li>
-                    <li>Gender: {gender ? gender : null}</li>
-                    <li>Shiny: {isShiny ? 'yes' : 'no'}</li>
-                    {!isWish ? <li>For Trade: {forTrade ? 'yes' : 'no'}</li> : null}
+                    <li>Nickname: {props.nickname ? props.nickname : 'no nickname'}</li>
+                    <li>Gender: {props.gender ? props.gender : null}</li>
+                    <li>Shiny: {props.isShiny ? 'yes' : 'no'}</li>
+                    {!isWish ? <li>For Trade: {props.forTrade ? 'yes' : 'no'}</li> : null}
                 </ul>
             </div>
         </div>

@@ -34,8 +34,8 @@ const UserPokemon = () => {
                             key={e.pokemon_id}
                             gender={e.gender}
                             pokedex={e.pokedex_num}
-                            is-shiny={e.is_shiny}
-                            for-trade={e.for_trade}
+                            isShiny={e.is_shiny}
+                            forTrade={e.for_trade}
                             type1={e.type1}
                             type2={e.type2}
                             nickname={e.nickname}
