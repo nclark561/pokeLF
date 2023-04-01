@@ -7,22 +7,17 @@ import "./UserPokemon.css"
 
 const UserPokemon = () => {
     const [pokemon, setPokemon] = useState([])
-    const [wishlist, setWishlist] = useState()
+    const [wishlist, setWishlist] = useState([])
 
     const routeParams = useParams()
 
-    let pokemon1 = ['mewtwo-mega-y', 'zoroark']
-    let wishlist1 = ['scrafty', 'floette', 'shaymin-land']
-
     const getPokemon = async () => {
         const {data} = await axios.get(`/user-pokemon/${localStorage.getItem("userId")}`)
-        if (pokemon !== data) setPokemon(() => data)
+        setPokemon(() => data.filter(e => e.pokemon_id !== undefined))
+        setWishlist(() => data.filter(e => e.wish_id !== undefined))
     }
 
     if (pokemon.length === 0) getPokemon()
-
-    console.log(pokemon)
-
 
     if (localStorage.getItem("userId") === routeParams.id) {
         return (
@@ -45,7 +40,15 @@ const UserPokemon = () => {
                 <h1 className="title">Looking For</h1>
                 <div className="card-container">
                     {
-                        wishlist1.map(e => (<PokemonCard image={e} wish={true} key={e}/>))
+                        wishlist.map(e => (<PokemonCard image={e.wish_name}
+                            wish={true} 
+                            key={e.wish_id}
+                            gender={e.gender}
+                            pokedex={e.pokedex_num}
+                            isShiny={e.is_shiny}
+                            type1={e.type1}
+                            type2={e.type2}
+                            />))
                     }
                 </div>
             </div>

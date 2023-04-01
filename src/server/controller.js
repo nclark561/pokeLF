@@ -44,6 +44,9 @@ module.exports = {
         sequelize.query(`
             SELECT * FROM pokemon
             WHERE trainer_id = ${id};
+
+            SELECT * FROM wishlist
+            WHERE user_id = ${id};
         `)
         .then(dbRes => res.status(200).send(dbRes[0]))
         .catch(err => {

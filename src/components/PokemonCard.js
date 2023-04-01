@@ -4,13 +4,6 @@ import './PokemonCard.css'
 const PokemonCard = (props) => {
     const firstName = props.image.split('-')[0] + (props.image.split('-')[1] === 'oh' ? '-' + props.image.split('-')[1] : '')
     const pokeName = firstName.charAt(0).toUpperCase() + firstName.replace(/^./, '')
-    const pokedexNum = 150;
-    const nickname = 'Buu';
-    const type1 = 'psychic';
-    const type2 = null;
-    const isShiny = false;
-    const gender = null;
-    const forTrade = false;
     const isWish = props.wish;
     
     return (
