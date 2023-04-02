@@ -32,8 +32,8 @@ const PokemonCard = (props) => {
                 <div>
                     <h3 className="card-h">#{props.pokedex} {pokeName}</h3>
                     <ul className="card-list">
-                        <li>Nickname: {props.nickname ? props.nickname : 'no nickname'}</li>
-                        <li>Gender: {props.gender ? props.gender : null}</li>
+                        {!isWish ? <li>Nickname: {props.nickname ? props.nickname : 'no nickname'}</li> : null}
+                        <li>Gender: {props.gender ? props.gender : (isWish ? 'any' : null)}</li>
                         <li>Shiny: {props.isShiny ? 'yes' : 'no'}</li>
                         {!isWish ? <li>For Trade: {props.forTrade ? 'yes' : 'no'}</li> : null}
                     </ul>
