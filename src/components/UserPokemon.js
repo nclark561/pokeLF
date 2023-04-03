@@ -9,6 +9,7 @@ import Addpoke from './Addpoke.js'
 const UserPokemon = () => {
     const [pokemon, setPokemon] = useState([])
     const [wishlist, setWishlist] = useState([])
+    const [pokePopup, setPokePopup] = useState(false)
 
     const routeParams = useParams()
 
@@ -39,7 +40,7 @@ const UserPokemon = () => {
                                 nickname={e.nickname}
                                 />))
                         }
-                        <button className='add-btn'>Add Pokemon</button>              
+                        <button className='add-btn' onClick={() => setPokePopup(true)}>Add Pokemon</button>              
                     </div>
                     <h1 className="title">Looking For</h1>
                     <div className="card-container">
@@ -58,7 +59,7 @@ const UserPokemon = () => {
                         <button className='add-btn'>Add Pokemon</button>
                     </div>
                 </div>
-                <Addpoke trigger={false}/>
+                <Addpoke trigger={pokePopup} setTrigger={setPokePopup}/>
             </>
         )
     } else {

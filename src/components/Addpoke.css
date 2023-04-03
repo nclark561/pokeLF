@@ -24,9 +24,9 @@
 }
 
 .close-btn {
-    position: fixed;
-    top:250px;
-    right: 430px;
+    position: absolute;
+    top:7px;
+    right: 15px;
     background: none;
     box-shadow: none;
     width: 32px;
@@ -42,4 +42,8 @@
     color: #1d1d1d;
     font-family: 'Orbitron', sans-serif;
     width: 200px;
+}
+
+.add-text {
+    width: 300px;
 }
