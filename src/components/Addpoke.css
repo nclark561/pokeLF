@@ -1,0 +1,45 @@
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-inner {
+    position: relative;
+    padding: 32px;
+    width: 100%;
+    max-width: 640px;
+}
+.popup-inner > * {
+    margin:10px;
+}
+
+.add-form {
+    margin:10px;
+}
+
+.close-btn {
+    position: fixed;
+    top:250px;
+    right: 430px;
+    background: none;
+    box-shadow: none;
+    width: 32px;
+    font-family: 'Orbitron', sans-serif;
+    color:#969696;
+}
+
+.close-btn:hover {
+    background: none;
+}
+
+.add-submit {
+    color: #1d1d1d;
+    font-family: 'Orbitron', sans-serif;
+    width: 200px;
+}
