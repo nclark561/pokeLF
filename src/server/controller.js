@@ -77,5 +77,17 @@ module.exports = {
         `)
         .then(dbRes => res.sendStatus(200))
         .catch(err => console.log(err))
+    },
+
+    addPokemon: (req, res) => {
+        const { name, pokedex, nickname, type1, type2, gender, isShiny, forTrade } = req.body
+        let id = req.params.id
+
+        sequelize.query(`
+            INSERT INTO pokemon (pokedex_num, poke_name, trainer_id, nickname, type1, type2, gender, is_shiny, for_trade)
+            VALUES (${pokedex}, '${name}', ${id}, ${nickname ? `${nickname}` : null}, '${type1}', ${type2 ? `${type2}` : null}, ${gender ? `${gender}` : null}, ${isShiny}, ${forTrade});
+        `)
+        .then(dbRes => res.sendStatus(200))
+        .catch(err => console.log(err))
     }
 }
