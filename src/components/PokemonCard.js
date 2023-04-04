@@ -16,8 +16,6 @@ const PokemonCard = (props) => {
             alert('pokemon successfully deleted')
         }
     }
-
-    console.log(props.gender)
     
     return (
         <div className="btn-div" id={props.id}>
