@@ -60,7 +60,7 @@ function AddWish(props) {
                     <option defaultValue="" disabled>Select gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
-                    <option value={null}>Genderless</option>
+                    <option value={null}>Any</option>
                 </select>
                 <label htmlFor="shiny">Shiny:</label>
                 <select name='shiny' className='add-form' id="w-shiny-in" required>

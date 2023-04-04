@@ -85,7 +85,7 @@ module.exports = {
 
         sequelize.query(`
             INSERT INTO pokemon (pokedex_num, poke_name, trainer_id, nickname, type1, type2, gender, is_shiny, for_trade)
-            VALUES (${pokedex}, '${name}', ${id}, ${nickname ? `'${nickname}'` : null}, '${type1}', ${type2 ? `'${type2}'` : null}, ${gender ? `'${gender}'` : null}, ${isShiny}, ${forTrade});
+            VALUES (${pokedex}, '${name}', ${id}, ${nickname ? `'${nickname}'` : null}, '${type1}', ${type2 ? `'${type2}'` : null}, ${!gender || gender === 'Genderless' ? null : `'${gender}'`}, ${isShiny}, ${forTrade});
         `)
         .then(dbRes => res.sendStatus(200))
         .catch(err => console.log(err))
@@ -93,11 +93,12 @@ module.exports = {
 
     addWish: (req, res) => {
         const { pokedex, name, type1, type2, gender, isShiny} = req.body
+    
         let id = req.params.id
 
         sequelize.query(`
             INSERT INTO wishlist (pokedex_num, wish_name, user_id, type1, type2, gender, is_shiny)
-            VALUES (${pokedex}, '${name}', ${id}, '${type1}', ${type2 ? `'${type2}'` : null}, ${gender ? `'${gender}'` : null}, ${isShiny});
+            VALUES (${pokedex}, '${name}', ${id}, '${type1}', ${type2 ? `'${type2}'` : null}, ${!gender || gender === 'Any' ? null : `'${gender}'`}, ${isShiny});
         `)
         .then(dbRes => res.sendStatus(200))
         .catch(err => console.log(err))
