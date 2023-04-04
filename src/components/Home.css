@@ -1,11 +1,20 @@
 #home-title {
     color: #1f9aff;
-    font-size: 18pt;
+    font-size: 24pt;
     text-shadow : 0 0 20px #1f9aff;
     font-family: 'Orbitron', sans-serif;
 }
 
 #home-div {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+p{
+    color: azure;
+    font-family: 'Orbitron', sans-serif;
+    max-width: 400px;
+    text-align: center;
+    font-size: 18pt;
 }

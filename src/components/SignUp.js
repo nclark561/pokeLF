@@ -50,7 +50,6 @@ const SignUp = () => {
 
     return (
         <div>
-            <Link to="/user/zoroark">zoroark</Link>
             <div id='formdiv'> 
                 <form onSubmit={handleSubmit}>
                     <img className="professor" src="https://lh6.googleusercontent.com/1R7-BuYW0h2GLR9ARne3l5wTVvLN1CQ3xIL1YW9JcKfx3jA7bS3yxOIzexewQZItYsI=w2400" alt='professor'/>
