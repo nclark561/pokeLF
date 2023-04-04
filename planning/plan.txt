@@ -1,0 +1,17 @@
+FOUNDATIONS CAPSTONE PLAN: PokeLF
+
+The end goal (though i dont plan to have this all done for the project)
+to make a webapp that will allow people to log and keep track of the 
+pokemon that they own, including info such as species nickname, stats,
+whether or not its shiny, ball it is held in, gender, moves, etc
+and eventually to be able to mark whether or not a pokemon is up for trade, 
+and also for said person to have a wishlist of pokemon they are in search of
+and to match people to other peopl based on their pokemon for trade and their wishlist
+
+MVP Features:
+- User will be able to create account
+- User will be able to login to account
+- User will be able to log out of account
+- User will be able to log new pokemon entries into their list
+- User will be able to view their list of pokemon and the pokemons attributes on screen
+- User will be able to remove pokemon from the list

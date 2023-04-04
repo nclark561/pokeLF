@@ -1,0 +1,8 @@
+pokemon sprite api URL (for shiny, if you want the original, just delete the '/shiny'):
+https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/shiny/${pokedexNum}.png
+
+(regional variants and alternate forms don't follow pokedex num)
+hisuian forms: 10229-10249
+
+get request to retrieve an object of all pokemon (not including regional variants)
+https://pokeapi.co/api/v2/pokemon?limit=1010
