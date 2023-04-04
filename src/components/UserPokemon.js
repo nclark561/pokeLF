@@ -4,12 +4,14 @@ import axios from 'axios'
 import PokemonCard from "./PokemonCard.js"
 import "./UserPokemon.css"
 import Addpoke from './Addpoke.js'
+import AddWish from './AddWish.js'
 
 
 const UserPokemon = () => {
     const [pokemon, setPokemon] = useState([])
     const [wishlist, setWishlist] = useState([])
     const [pokePopup, setPokePopup] = useState(false)
+    const [wishPopup, setWishPopup] = useState(false)
 
     const routeParams = useParams()
 
@@ -20,6 +22,10 @@ const UserPokemon = () => {
     }
 
     if (pokemon.length === 0) getPokemon()
+
+
+
+    console.log('i rendered')
 
     if (localStorage.getItem("userId") === routeParams.id) {
         return (
@@ -56,10 +62,11 @@ const UserPokemon = () => {
                                 type2={e.type2}
                                 />))
                         }
-                        <button className='add-btn'>Add Pokemon</button>
+                        <button className='add-btn' onClick={() => setWishPopup(true)}>Add Pokemon</button>
                     </div>
                 </div>
                 <Addpoke trigger={pokePopup} setTrigger={setPokePopup}/>
+                <AddWish trigger={wishPopup} setTrigger={setWishPopup}/>
             </>
         )
     } else {
