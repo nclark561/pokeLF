@@ -37,7 +37,10 @@ function Addpoke(props) {
                     .then(res => console.log(`${pokemon} added`))
                     .catch(err => console.log(err))
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                alert('invalid input')
+            })
 
         document.getElementById('pokemon-in').value = ''
         document.getElementById('nickname-in').value = ''
