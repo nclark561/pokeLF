@@ -44,6 +44,7 @@ const UserPokemon = () => {
                                 type1={e.type1}
                                 type2={e.type2}
                                 nickname={e.nickname}
+                                refresh={getPokemon}
                                 />))
                         }
                         <button className='add-btn' onClick={() => setPokePopup(true)}>Add Pokemon</button>              
@@ -60,13 +61,14 @@ const UserPokemon = () => {
                                 isShiny={e.is_shiny}
                                 type1={e.type1}
                                 type2={e.type2}
+                                refresh={getPokemon}
                                 />))
                         }
                         <button className='add-btn' onClick={() => setWishPopup(true)}>Add Pokemon</button>
                     </div>
                 </div>
-                <Addpoke trigger={pokePopup} setTrigger={setPokePopup}/>
-                <AddWish trigger={wishPopup} setTrigger={setWishPopup}/>
+                <Addpoke trigger={pokePopup} setTrigger={setPokePopup} refresh={getPokemon}/>
+                <AddWish trigger={wishPopup} setTrigger={setWishPopup} refresh= {getPokemon}/>
             </>
         )
     } else {

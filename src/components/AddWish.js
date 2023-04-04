@@ -30,7 +30,10 @@ function AddWish(props) {
                     isShiny: shinyIn
                 }
                 axios.post(`/user-wish/${id}`, maBod)
-                    .then(res => console.log(`${pokemon} added`))
+                    .then(res => {
+                        console.log(`${pokemon} added`)
+                        props.refresh()
+                    })
                     .catch(err => console.log(err))
             })
             .catch(err => {
@@ -41,6 +44,8 @@ function AddWish(props) {
         document.getElementById('w-pokemon-in').value = ''
         document.getElementById('w-gender-in').value = ''
         document.getElementById('w-shiny-in').value = ''
+
+        props.setTrigger(false)
     }
 
   return (props.trigger) ? (

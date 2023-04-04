@@ -34,7 +34,10 @@ function Addpoke(props) {
                     forTrade: tradeIn
                 }
                 axios.post(`/user-pokemon/${id}`, maBod)
-                    .then(res => console.log(`${pokemon} added`))
+                    .then(res => {
+                        console.log(`${pokemon} added`)
+                        props.refresh()
+                    })
                     .catch(err => console.log(err))
             })
             .catch(err => {
@@ -47,6 +50,8 @@ function Addpoke(props) {
         document.getElementById('gender-in').value = ''
         document.getElementById('shiny-in').value = ''
         document.getElementById('trade-in').value = ''
+
+        props.setTrigger(false)
     } 
 
   return (props.trigger) ? (

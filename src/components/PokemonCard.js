@@ -10,10 +10,10 @@ const PokemonCard = (props) => {
     const handleDelete = async () => {
         if (props.wish) {
             await axios.delete(`/user-wish/${props.id}`)
-            alert('pokemon successfully deleted')
+            props.refresh()
         } else {
             await axios.delete(`/user-pokemon/${props.id}`)
-            alert('pokemon successfully deleted')
+            props.refresh()
         }
     }
     
