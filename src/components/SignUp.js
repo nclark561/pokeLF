@@ -31,8 +31,7 @@ const SignUp = () => {
         event.preventDefault()
 
         let maBod = {
-            email: registerEmail,
-            password: registerPassword
+            email: registerEmail
         }
 
         console.log(maBod)

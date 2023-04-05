@@ -28,9 +28,9 @@ CREATE TABLE wishlist (
     is_shiny BOOLEAN NOT NULL
 );
 
-INSERT INTO users (email, password)
-VALUES ('noahwebdev@gmail.com', 'password'),
-('legacygardening@gmail.com', 'password2');
+INSERT INTO users (email)
+VALUES ('noahwebdev@gmail.com'),
+('legacygardening@gmail.com');
 
 INSERT INTO pokemon (pokedex_num, poke_name, trainer_id, nickname, type1, type2, gender, is_shiny, for_trade)
 VALUES (392, 'infernape', 1, null, 'fire', 'fighting', 'male', FALSE, TRUE),
