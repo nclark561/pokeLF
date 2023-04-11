@@ -21,7 +21,9 @@ const UserPokemon = () => {
         setWishlist(() => data.filter(e => e.wish_id !== undefined))
     }
 
-    if (pokemon.length === 0) getPokemon()
+    useEffect(() => {
+        getPokemon()
+    }, [])
 
 
 
