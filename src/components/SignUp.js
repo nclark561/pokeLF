@@ -39,7 +39,7 @@ const SignUp = () => {
         axios.post('/signup', maBod)
         .then(res => {
             register()
-            console.log(res, `${maBod} account successfully created`)
+            console.log(res, `account successfully created`)
         })
         .catch(err => {
             alert('invalid email or password')

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import './Addpoke.css'
 
 function Addpoke(props) {
-
+    const [allPokemon, setAllPokemon] = useState()
     const addMon = evt => {
         evt.preventDefault()
 
@@ -54,12 +54,26 @@ function Addpoke(props) {
         props.setTrigger(false)
     } 
 
+    useEffect(() => {
+        fetch('https://pokeapi.co/api/v2/pokemon?limit=1292')
+        .then(async (res) => {
+            const resp = await res.json()
+            setAllPokemon(resp.results)
+        })
+        .catch(() => null)
+    }, [])
+
   return (props.trigger) ? (
     <div className='popup'>
         <form className='popup-inner' onSubmit={addMon}>
             <button className='close-btn' onClick={() => props.setTrigger(false)}>X</button>
             <label htmlFor="pokemon">Pokemon:</label>
-            <input placeholder='pokemon' name="pokemon" className='add-text' id="pokemon-in" required></input>
+            <input placeholder='pokemon' name="pokemon" className='add-text' id="pokemon-in" list="pokemon-list" required />
+             {allPokemon && (
+                <datalist id='pokemon-list'>
+                    {allPokemon.map(p => <option key={p.name}>{p.name}</option>)}
+                </datalist>
+             )}
             <label htmlFor="nickname">Nickname:</label>
             <input placeholder='nickname' name="nickname" className='add-text' id="nickname-in"></input>
             <div>
